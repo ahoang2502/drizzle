@@ -16,6 +16,6 @@ const CreateProject = async () => {
       <ProjectForm type="create" session={session} />
     </Modal>
   );
-};
+}
 
 export default CreateProject;
