@@ -21,7 +21,7 @@ const ProfilePage = ({ user }: Props) => (
           alt="user image"
         />
         <p className="text-4xl font-bold mt-10">{user?.name}</p>
-        <p className="md:text-5xl text-3xl font-extrabold md:mt-10 mt-5 max-w-lg">
+        <p className="md:text-5xl text-2xl font-extrabold md:mt-10 mt-5 max-w-lg">
           Hi, I'm a full-stack software developer 👋
         </p>
 
