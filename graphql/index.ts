@@ -99,8 +99,8 @@ export const projectsQuery = `
 `;
 
 export const getAllProjectsQuery = `
-  query allProjects($endCursor: String) {
-    projectSearch(first: 4, after: $endCursor) {
+  query allProjects($endcursor: String) {
+    projectSearch(first: 8, after: $endcursor) {
       pageInfo {
         hasNextPage
         hasPreviousPage
