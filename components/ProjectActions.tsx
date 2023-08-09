@@ -8,17 +8,21 @@ import { useRouter } from "next/navigation";
 
 const ProjectActions = ({ projectId }: { projectId: string }) => {
   const [isDeleting, setIsDeleting] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleDeleteProject = async () => {
-    setIsDeleting(true)
+    setIsDeleting(true);
 
-    const {token} = await fetchToken()
+    const { token } = await fetchToken();
 
     try {
-        await deleteProject(projectId, token)
+      await deleteProject(projectId, token);
+
+      router.push("/");
     } catch (error) {
-        
+      console.log(error);
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -36,6 +40,7 @@ const ProjectActions = ({ projectId }: { projectId: string }) => {
         className={`flexCenter delete-action_btn  ${
           isDeleting ? "bg-gray" : "bg-pink"
         }`}
+        onClick={handleDeleteProject}
       >
         <Image src="/trash.svg" alt="edit" width={15} height={15} />
       </button>
